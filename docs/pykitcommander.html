@@ -1,0 +1,1064 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>pykitcommander package &#8212; pykitcommander  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/microchip.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="pykitcommander documentation" href="index.html" /> 
+  </head><body>
+    <header>
+        <div class="logo">
+            <a href="https://microchip.com" target="_blank">
+                <img src="_static/microchip.png" />
+            </a>
+        </div>
+    </header>
+
+    <div class="related-wrapper">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="pykitcommander documentation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pykitcommander  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pykitcommander package</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="document">
+        
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">pykitcommander package</a><ul>
+<li><a class="reference internal" href="#module-pykitcommander.kitmanager">Kit manager</a><ul>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.CellularKitLeds"><code class="docutils literal notranslate"><span class="pre">CellularKitLeds</span></code></a><ul>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.CellularKitLeds.CONNECTION_LED"><code class="docutils literal notranslate"><span class="pre">CellularKitLeds.CONNECTION_LED</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.CellularKitLeds.DATA_LED"><code class="docutils literal notranslate"><span class="pre">CellularKitLeds.DATA_LED</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.CellularKitLeds.ERROR_LED"><code class="docutils literal notranslate"><span class="pre">CellularKitLeds.ERROR_LED</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.CellularKitLeds.USER_LED"><code class="docutils literal notranslate"><span class="pre">CellularKitLeds.USER_LED</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.CellularKitLeds.WIRELESS_LED"><code class="docutils literal notranslate"><span class="pre">CellularKitLeds.WIRELESS_LED</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.CellularMiniKitLeds"><code class="docutils literal notranslate"><span class="pre">CellularMiniKitLeds</span></code></a><ul>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.CellularMiniKitLeds.CONNECTION_LED"><code class="docutils literal notranslate"><span class="pre">CellularMiniKitLeds.CONNECTION_LED</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.CellularMiniKitLeds.DATA_LED"><code class="docutils literal notranslate"><span class="pre">CellularMiniKitLeds.DATA_LED</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.CellularMiniKitLeds.ERROR_LED"><code class="docutils literal notranslate"><span class="pre">CellularMiniKitLeds.ERROR_LED</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.CellularMiniKitLeds.USER_LED"><code class="docutils literal notranslate"><span class="pre">CellularMiniKitLeds.USER_LED</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.CellularMiniKitLeds.WIRELESS_LED"><code class="docutils literal notranslate"><span class="pre">CellularMiniKitLeds.WIRELESS_LED</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.KitApplicationFirmwareProvider"><code class="docutils literal notranslate"><span class="pre">KitApplicationFirmwareProvider</span></code></a><ul>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.KitApplicationFirmwareProvider.locate_firmware"><code class="docutils literal notranslate"><span class="pre">KitApplicationFirmwareProvider.locate_firmware()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.KitLeds"><code class="docutils literal notranslate"><span class="pre">KitLeds</span></code></a><ul>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.KitLeds.CONNECTION_LED"><code class="docutils literal notranslate"><span class="pre">KitLeds.CONNECTION_LED</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.KitLeds.DATA_LED"><code class="docutils literal notranslate"><span class="pre">KitLeds.DATA_LED</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.KitLeds.ERROR_LED"><code class="docutils literal notranslate"><span class="pre">KitLeds.ERROR_LED</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.KitLeds.USER_LED"><code class="docutils literal notranslate"><span class="pre">KitLeds.USER_LED</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.KitLeds.WIRELESS_LED"><code class="docutils literal notranslate"><span class="pre">KitLeds.WIRELESS_LED</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.KitProgrammer"><code class="docutils literal notranslate"><span class="pre">KitProgrammer</span></code></a><ul>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.KitProgrammer.erase"><code class="docutils literal notranslate"><span class="pre">KitProgrammer.erase()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.KitProgrammer.get_kit_info"><code class="docutils literal notranslate"><span class="pre">KitProgrammer.get_kit_info()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.KitProgrammer.program_application"><code class="docutils literal notranslate"><span class="pre">KitProgrammer.program_application()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.KitProgrammer.reboot"><code class="docutils literal notranslate"><span class="pre">KitProgrammer.reboot()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.KitProgrammer.reset_target"><code class="docutils literal notranslate"><span class="pre">KitProgrammer.reset_target()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.TrustplatformKitLeds"><code class="docutils literal notranslate"><span class="pre">TrustplatformKitLeds</span></code></a><ul>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.TrustplatformKitLeds.ERROR_LED"><code class="docutils literal notranslate"><span class="pre">TrustplatformKitLeds.ERROR_LED</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.WifiKitLeds"><code class="docutils literal notranslate"><span class="pre">WifiKitLeds</span></code></a><ul>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.WifiKitLeds.CONNECTION_LED"><code class="docutils literal notranslate"><span class="pre">WifiKitLeds.CONNECTION_LED</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.WifiKitLeds.DATA_LED"><code class="docutils literal notranslate"><span class="pre">WifiKitLeds.DATA_LED</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.WifiKitLeds.ERROR_LED"><code class="docutils literal notranslate"><span class="pre">WifiKitLeds.ERROR_LED</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.WifiKitLeds.WIRELESS_LED"><code class="docutils literal notranslate"><span class="pre">WifiKitLeds.WIRELESS_LED</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pykitcommander.kitmanager.get_supported_kits"><code class="docutils literal notranslate"><span class="pre">get_supported_kits()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pykitcommander.kitprotocols">Kit protocols</a><ul>
+<li><a class="reference internal" href="#pykitcommander.kitprotocols.get_iot_provision_protocol"><code class="docutils literal notranslate"><span class="pre">get_iot_provision_protocol()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitprotocols.get_protocol"><code class="docutils literal notranslate"><span class="pre">get_protocol()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitprotocols.setup_kit"><code class="docutils literal notranslate"><span class="pre">setup_kit()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pykitcommander.firmwareinterface">Firmware interface</a><ul>
+<li><a class="reference internal" href="#pykitcommander.firmwareinterface.IoTWxDemoFirmwareDriver"><code class="docutils literal notranslate"><span class="pre">IoTWxDemoFirmwareDriver</span></code></a><ul>
+<li><a class="reference internal" href="#pykitcommander.firmwareinterface.IoTWxDemoFirmwareDriver.demo_firmware_command"><code class="docutils literal notranslate"><span class="pre">IoTWxDemoFirmwareDriver.demo_firmware_command()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver"><code class="docutils literal notranslate"><span class="pre">ProvisioningFirmwareDriver</span></code></a><ul>
+<li><a class="reference internal" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.MC_STATUS_BAD_ARGUMENT_COUNT"><code class="docutils literal notranslate"><span class="pre">ProvisioningFirmwareDriver.MC_STATUS_BAD_ARGUMENT_COUNT</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.MC_STATUS_BAD_ARGUMENT_VALUE"><code class="docutils literal notranslate"><span class="pre">ProvisioningFirmwareDriver.MC_STATUS_BAD_ARGUMENT_VALUE</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.MC_STATUS_BAD_BLOB"><code class="docutils literal notranslate"><span class="pre">ProvisioningFirmwareDriver.MC_STATUS_BAD_BLOB</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.MC_STATUS_BAD_COMMAND"><code class="docutils literal notranslate"><span class="pre">ProvisioningFirmwareDriver.MC_STATUS_BAD_COMMAND</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.MC_STATUS_BUFFER_OVERRUN"><code class="docutils literal notranslate"><span class="pre">ProvisioningFirmwareDriver.MC_STATUS_BUFFER_OVERRUN</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.MC_STATUS_OK"><code class="docutils literal notranslate"><span class="pre">ProvisioningFirmwareDriver.MC_STATUS_OK</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.STATUS_SOURCE_COMMAND_HANDLER"><code class="docutils literal notranslate"><span class="pre">ProvisioningFirmwareDriver.STATUS_SOURCE_COMMAND_HANDLER</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.STATUS_SOURCE_CRYPTOAUTHLIB"><code class="docutils literal notranslate"><span class="pre">ProvisioningFirmwareDriver.STATUS_SOURCE_CRYPTOAUTHLIB</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.STATUS_SOURCE_WINC"><code class="docutils literal notranslate"><span class="pre">ProvisioningFirmwareDriver.STATUS_SOURCE_WINC</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.firmware_command"><code class="docutils literal notranslate"><span class="pre">ProvisioningFirmwareDriver.firmware_command()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.parse_error_code"><code class="docutils literal notranslate"><span class="pre">ProvisioningFirmwareDriver.parse_error_code()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.read_response"><code class="docutils literal notranslate"><span class="pre">ProvisioningFirmwareDriver.read_response()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.synchronize"><code class="docutils literal notranslate"><span class="pre">ProvisioningFirmwareDriver.synchronize()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.wait_for_reset"><code class="docutils literal notranslate"><span class="pre">ProvisioningFirmwareDriver.wait_for_reset()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pykitcommander.programmer">Programmer</a><ul>
+<li><a class="reference internal" href="#pykitcommander.programmer.Programmer"><code class="docutils literal notranslate"><span class="pre">Programmer</span></code></a><ul>
+<li><a class="reference internal" href="#pykitcommander.programmer.Programmer.erase_target_device"><code class="docutils literal notranslate"><span class="pre">Programmer.erase_target_device()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.programmer.Programmer.program_data"><code class="docutils literal notranslate"><span class="pre">Programmer.program_data()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.programmer.Programmer.program_hexfile"><code class="docutils literal notranslate"><span class="pre">Programmer.program_hexfile()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.programmer.Programmer.read_data"><code class="docutils literal notranslate"><span class="pre">Programmer.read_data()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.programmer.Programmer.reboot"><code class="docutils literal notranslate"><span class="pre">Programmer.reboot()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.programmer.Programmer.reset_target"><code class="docutils literal notranslate"><span class="pre">Programmer.reset_target()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pykitcommander.programmer.PymcuprogProgrammer"><code class="docutils literal notranslate"><span class="pre">PymcuprogProgrammer</span></code></a><ul>
+<li><a class="reference internal" href="#pykitcommander.programmer.PymcuprogProgrammer.erase_target_device"><code class="docutils literal notranslate"><span class="pre">PymcuprogProgrammer.erase_target_device()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.programmer.PymcuprogProgrammer.get_usable_kits"><code class="docutils literal notranslate"><span class="pre">PymcuprogProgrammer.get_usable_kits()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.programmer.PymcuprogProgrammer.program_data"><code class="docutils literal notranslate"><span class="pre">PymcuprogProgrammer.program_data()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.programmer.PymcuprogProgrammer.program_hexfile"><code class="docutils literal notranslate"><span class="pre">PymcuprogProgrammer.program_hexfile()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.programmer.PymcuprogProgrammer.read_data"><code class="docutils literal notranslate"><span class="pre">PymcuprogProgrammer.read_data()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.programmer.PymcuprogProgrammer.read_kit_info"><code class="docutils literal notranslate"><span class="pre">PymcuprogProgrammer.read_kit_info()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.programmer.PymcuprogProgrammer.reboot"><code class="docutils literal notranslate"><span class="pre">PymcuprogProgrammer.reboot()</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.programmer.PymcuprogProgrammer.reset_target"><code class="docutils literal notranslate"><span class="pre">PymcuprogProgrammer.reset_target()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pykitcommander.kitcommandererrors">Errors</a><ul>
+<li><a class="reference internal" href="#pykitcommander.kitcommandererrors.KitCommunicationError"><code class="docutils literal notranslate"><span class="pre">KitCommunicationError</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitcommandererrors.KitConnectionError"><code class="docutils literal notranslate"><span class="pre">KitConnectionError</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitcommandererrors.KitError"><code class="docutils literal notranslate"><span class="pre">KitError</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitcommandererrors.PortError"><code class="docutils literal notranslate"><span class="pre">PortError</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitcommandererrors.ProgrammingError"><code class="docutils literal notranslate"><span class="pre">ProgrammingError</span></code></a></li>
+<li><a class="reference internal" href="#pykitcommander.kitcommandererrors.PykitcommanderError"><code class="docutils literal notranslate"><span class="pre">PykitcommanderError</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pykitcommander">Module contents</a><ul>
+<li><a class="reference internal" href="#pykitcommander-python-kit-commander">pykitcommander - Python Kit Commander</a></li>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#usage-example">Usage example</a></li>
+<li><a class="reference internal" href="#notes-for-linux-systems">Notes for Linux® systems</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="index.html"
+                          title="previous chapter">pykitcommander documentation</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pykitcommander.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+        <div class="documentwrapper">
+            <div class="bodywrapper">
+                <div class="body" role="main">
+                    
+  <section id="pykitcommander-package">
+<h1>pykitcommander package<a class="headerlink" href="#pykitcommander-package" title="Permalink to this heading">¶</a></h1>
+<section id="module-pykitcommander.kitmanager">
+<span id="kit-manager"></span><h2>Kit manager<a class="headerlink" href="#module-pykitcommander.kitmanager" title="Permalink to this heading">¶</a></h2>
+<p>Kit state management functions</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.CellularKitLeds">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykitcommander.kitmanager.</span></span><span class="sig-name descname"><span class="pre">CellularKitLeds</span></span><a class="headerlink" href="#pykitcommander.kitmanager.CellularKitLeds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pykitcommander.kitmanager.KitLeds" title="pykitcommander.kitmanager.KitLeds"><code class="xref py py-class docutils literal notranslate"><span class="pre">KitLeds</span></code></a></p>
+<p>Definition of LED names on Cellular IoT kits</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.CellularKitLeds.CONNECTION_LED">
+<span class="sig-name descname"><span class="pre">CONNECTION_LED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'CONN'</span></em><a class="headerlink" href="#pykitcommander.kitmanager.CellularKitLeds.CONNECTION_LED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.CellularKitLeds.DATA_LED">
+<span class="sig-name descname"><span class="pre">DATA_LED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'DATA'</span></em><a class="headerlink" href="#pykitcommander.kitmanager.CellularKitLeds.DATA_LED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.CellularKitLeds.ERROR_LED">
+<span class="sig-name descname"><span class="pre">ERROR_LED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ERR'</span></em><a class="headerlink" href="#pykitcommander.kitmanager.CellularKitLeds.ERROR_LED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.CellularKitLeds.USER_LED">
+<span class="sig-name descname"><span class="pre">USER_LED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'USER'</span></em><a class="headerlink" href="#pykitcommander.kitmanager.CellularKitLeds.USER_LED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.CellularKitLeds.WIRELESS_LED">
+<span class="sig-name descname"><span class="pre">WIRELESS_LED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'CELL'</span></em><a class="headerlink" href="#pykitcommander.kitmanager.CellularKitLeds.WIRELESS_LED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.CellularMiniKitLeds">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykitcommander.kitmanager.</span></span><span class="sig-name descname"><span class="pre">CellularMiniKitLeds</span></span><a class="headerlink" href="#pykitcommander.kitmanager.CellularMiniKitLeds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pykitcommander.kitmanager.KitLeds" title="pykitcommander.kitmanager.KitLeds"><code class="xref py py-class docutils literal notranslate"><span class="pre">KitLeds</span></code></a></p>
+<p>Definition of LED names on Cellular Mini IoT kits</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.CellularMiniKitLeds.CONNECTION_LED">
+<span class="sig-name descname"><span class="pre">CONNECTION_LED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'CONN'</span></em><a class="headerlink" href="#pykitcommander.kitmanager.CellularMiniKitLeds.CONNECTION_LED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.CellularMiniKitLeds.DATA_LED">
+<span class="sig-name descname"><span class="pre">DATA_LED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'DATA'</span></em><a class="headerlink" href="#pykitcommander.kitmanager.CellularMiniKitLeds.DATA_LED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.CellularMiniKitLeds.ERROR_LED">
+<span class="sig-name descname"><span class="pre">ERROR_LED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ERROR'</span></em><a class="headerlink" href="#pykitcommander.kitmanager.CellularMiniKitLeds.ERROR_LED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.CellularMiniKitLeds.USER_LED">
+<span class="sig-name descname"><span class="pre">USER_LED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'USER'</span></em><a class="headerlink" href="#pykitcommander.kitmanager.CellularMiniKitLeds.USER_LED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.CellularMiniKitLeds.WIRELESS_LED">
+<span class="sig-name descname"><span class="pre">WIRELESS_LED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'CELL'</span></em><a class="headerlink" href="#pykitcommander.kitmanager.CellularMiniKitLeds.WIRELESS_LED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.KitApplicationFirmwareProvider">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykitcommander.kitmanager.</span></span><span class="sig-name descname"><span class="pre">KitApplicationFirmwareProvider</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kitname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hexfile_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">INSTALLDIR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.kitmanager.KitApplicationFirmwareProvider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Finds applications based on required functionality, device/board and ‘cloud provider’.</p>
+<p>Looks in:</p>
+<ul class="simple">
+<li><p>bundled folders</p></li>
+<li><p>internal server / artifact repo (todo)</p></li>
+<li><p>external server / github (todo)</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kitname</strong> (<em>str</em>) – Name of kit being used</p></li>
+<li><p><strong>hexfile_path</strong> (<em>str</em><em>, </em><em>optional</em>) – Path to hexfile to use</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.KitApplicationFirmwareProvider.locate_firmware">
+<span class="sig-name descname"><span class="pre">locate_firmware</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">firmware_identifier</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.kitmanager.KitApplicationFirmwareProvider.locate_firmware" title="Permalink to this definition">¶</a></dt>
+<dd><p>Looks up and returns firmware for a given identifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>firmware_identifier</strong> (<em>str</em>) – Unique ID of firmware</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary containing information about the firmware image</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.KitLeds">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykitcommander.kitmanager.</span></span><span class="sig-name descname"><span class="pre">KitLeds</span></span><a class="headerlink" href="#pykitcommander.kitmanager.KitLeds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for LED name definitions on IoT kits</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.KitLeds.CONNECTION_LED">
+<span class="sig-name descname"><span class="pre">CONNECTION_LED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pykitcommander.kitmanager.KitLeds.CONNECTION_LED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.KitLeds.DATA_LED">
+<span class="sig-name descname"><span class="pre">DATA_LED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pykitcommander.kitmanager.KitLeds.DATA_LED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.KitLeds.ERROR_LED">
+<span class="sig-name descname"><span class="pre">ERROR_LED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pykitcommander.kitmanager.KitLeds.ERROR_LED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.KitLeds.USER_LED">
+<span class="sig-name descname"><span class="pre">USER_LED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pykitcommander.kitmanager.KitLeds.USER_LED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.KitLeds.WIRELESS_LED">
+<span class="sig-name descname"><span class="pre">WIRELESS_LED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pykitcommander.kitmanager.KitLeds.WIRELESS_LED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.KitProgrammer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykitcommander.kitmanager.</span></span><span class="sig-name descname"><span class="pre">KitProgrammer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serialnumber</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.kitmanager.KitProgrammer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Programming applications onto kits</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>serialnumber</strong> (<em>str</em><em>, </em><em>optional</em>) – Serial number of kit/programmer to connect to</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.KitProgrammer.erase">
+<span class="sig-name descname"><span class="pre">erase</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.kitmanager.KitProgrammer.erase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Erases the target</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.KitProgrammer.get_kit_info">
+<span class="sig-name descname"><span class="pre">get_kit_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.kitmanager.KitProgrammer.get_kit_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves kit info dict</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.KitProgrammer.program_application">
+<span class="sig-name descname"><span class="pre">program_application</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hexfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cached'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.kitmanager.KitProgrammer.program_application" title="Permalink to this definition">¶</a></dt>
+<dd><p>Programs an application into the kit</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hexfile</strong> (<em>str</em>) – Path to hex file to program</p></li>
+<li><p><strong>strategy</strong> (<em>str</em>) – Use caching, or other special mode</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.KitProgrammer.reboot">
+<span class="sig-name descname"><span class="pre">reboot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.kitmanager.KitProgrammer.reboot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reboots the debugger</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.KitProgrammer.reset_target">
+<span class="sig-name descname"><span class="pre">reset_target</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.kitmanager.KitProgrammer.reset_target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets the target</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.TrustplatformKitLeds">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykitcommander.kitmanager.</span></span><span class="sig-name descname"><span class="pre">TrustplatformKitLeds</span></span><a class="headerlink" href="#pykitcommander.kitmanager.TrustplatformKitLeds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pykitcommander.kitmanager.KitLeds" title="pykitcommander.kitmanager.KitLeds"><code class="xref py py-class docutils literal notranslate"><span class="pre">KitLeds</span></code></a></p>
+<p>Definition of LED names on CryptoAuth Trust Platform kits</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.TrustplatformKitLeds.ERROR_LED">
+<span class="sig-name descname"><span class="pre">ERROR_LED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'STATUS'</span></em><a class="headerlink" href="#pykitcommander.kitmanager.TrustplatformKitLeds.ERROR_LED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.WifiKitLeds">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykitcommander.kitmanager.</span></span><span class="sig-name descname"><span class="pre">WifiKitLeds</span></span><a class="headerlink" href="#pykitcommander.kitmanager.WifiKitLeds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pykitcommander.kitmanager.KitLeds" title="pykitcommander.kitmanager.KitLeds"><code class="xref py py-class docutils literal notranslate"><span class="pre">KitLeds</span></code></a></p>
+<p>Definition of LED names on WIFI IoT kits</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.WifiKitLeds.CONNECTION_LED">
+<span class="sig-name descname"><span class="pre">CONNECTION_LED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'CONN'</span></em><a class="headerlink" href="#pykitcommander.kitmanager.WifiKitLeds.CONNECTION_LED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.WifiKitLeds.DATA_LED">
+<span class="sig-name descname"><span class="pre">DATA_LED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'DATA'</span></em><a class="headerlink" href="#pykitcommander.kitmanager.WifiKitLeds.DATA_LED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.WifiKitLeds.ERROR_LED">
+<span class="sig-name descname"><span class="pre">ERROR_LED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ERROR'</span></em><a class="headerlink" href="#pykitcommander.kitmanager.WifiKitLeds.ERROR_LED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.WifiKitLeds.WIRELESS_LED">
+<span class="sig-name descname"><span class="pre">WIRELESS_LED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'WIFI'</span></em><a class="headerlink" href="#pykitcommander.kitmanager.WifiKitLeds.WIRELESS_LED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pykitcommander.kitmanager.get_supported_kits">
+<span class="sig-prename descclassname"><span class="pre">pykitcommander.kitmanager.</span></span><span class="sig-name descname"><span class="pre">get_supported_kits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.kitmanager.get_supported_kits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simple accessor of supported kits (and variants thereof)</p>
+</dd></dl>
+
+</section>
+<section id="module-pykitcommander.kitprotocols">
+<span id="kit-protocols"></span><h2>Kit protocols<a class="headerlink" href="#module-pykitcommander.kitprotocols" title="Permalink to this heading">¶</a></h2>
+<p>Helper functions for setting up simple applications</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="pykitcommander.kitprotocols.get_iot_provision_protocol">
+<span class="sig-prename descclassname"><span class="pre">pykitcommander.kitprotocols.</span></span><span class="sig-name descname"><span class="pre">get_iot_provision_protocol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">skip_programming</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serialnumber</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.kitprotocols.get_iot_provision_protocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Back compatibility API - render “not supported” message.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pykitcommander.kitprotocols.get_protocol">
+<span class="sig-prename descclassname"><span class="pre">pykitcommander.kitprotocols.</span></span><span class="sig-name descname"><span class="pre">get_protocol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">protocol_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_programming</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serialnumber</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.kitprotocols.get_protocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Back compatibility API - render “not supported” message.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pykitcommander.kitprotocols.setup_kit">
+<span class="sig-prename descclassname"><span class="pre">pykitcommander.kitprotocols.</span></span><span class="sig-name descname"><span class="pre">setup_kit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_programming</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serialnumber</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">programmer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.kitprotocols.setup_kit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets up a kit for communication</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>function</strong> (<em>str</em>) – Requested function of the kit</p></li>
+<li><p><strong>skip_programming</strong> (<em>boolean</em>) – Set to true to not program the kit</p></li>
+<li><p><strong>serialnumber</strong> (<em>str</em>) – Serial number of kit to connect to</p></li>
+<li><p><strong>programmer</strong> (<em>object</em><em> (</em><a class="reference internal" href="#pykitcommander.kitmanager.KitProgrammer" title="pykitcommander.kitmanager.KitProgrammer"><em>KitProgrammer</em></a><em>)</em>) – Optional programmer object to use</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pykitcommander.firmwareinterface">
+<span id="firmware-interface"></span><h2>Firmware interface<a class="headerlink" href="#module-pykitcommander.firmwareinterface" title="Permalink to this heading">¶</a></h2>
+<p>A collection of firmware Serial-port-based communication drivers</p>
+<p>Python-side clients that need to request services from firmware running on an embedded device
+use these drivers to send commands and receive responses over a standard serial port.</p>
+<p>Good practise is to follow this kind of pattern, which ensures port closure after use:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open a serial connection with given attributes</span>
+<span class="k">with</span> <span class="n">Serial</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">baud</span><span class="p">,</span> <span class="n">timeout</span><span class="p">,</span> <span class="n">stopbits</span><span class="p">)</span> <span class="k">as</span> <span class="n">serial_connection</span><span class="p">:</span>
+    <span class="c1"># Instantiate a driver to handle communications</span>
+    <span class="n">firmware_driver</span> <span class="o">=</span> <span class="n">ProvisioningFirmwareDriver</span> <span class="p">(</span><span class="n">serial_connection</span><span class="p">)</span>
+    <span class="c1"># Send firmware command to turn on LED</span>
+    <span class="n">firmware_driver</span><span class="o">.</span><span class="n">firmware_command</span><span class="p">(</span><span class="s2">&quot;MC+SETLED&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;conn&quot;</span><span class="p">,</span><span class="s2">&quot;on&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="pykitcommander.firmwareinterface.IoTWxDemoFirmwareDriver">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykitcommander.firmwareinterface.</span></span><span class="sig-name descname"><span class="pre">IoTWxDemoFirmwareDriver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serial_connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.firmwareinterface.IoTWxDemoFirmwareDriver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Interface to demo firmware on WiFi boards (AVR-IoT-Wx/PIC-IoT-Wx)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>serial_connection</strong> (<em>object</em><em> (</em><em>Serial</em><em>)</em>) – Serial-port object to use, must be opened by the caller</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.firmwareinterface.IoTWxDemoFirmwareDriver.demo_firmware_command">
+<span class="sig-name descname"><span class="pre">demo_firmware_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.firmwareinterface.IoTWxDemoFirmwareDriver.demo_firmware_command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a request to demo FW CLI, return response.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cmd</strong> (<em>str</em>) – Command to send</p></li>
+<li><p><strong>args</strong> (<em>list</em><em> of </em><em>str</em>) – Argument list</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>response from firmware</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pykitcommander.firmwareinterface.ProvisioningFirmwareDriver">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykitcommander.firmwareinterface.</span></span><span class="sig-name descname"><span class="pre">ProvisioningFirmwareDriver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serial_connection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'UTF-8'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Firmware driver for communicating with “version 2” provisioning firmware
+Commands and responses are strings as described here:
+- Commands are terminated with r (rn and n are also accepted)
+- Command syntax: &lt;cmd&gt;=[&lt;arg&gt;[,&lt;arg&gt;…]rn [blob rn]]
+- Response:  [&lt;blob&gt; rn] “OKrn” | “ERROR:”&lt;xxxx&gt;rn
+- &lt;hex&gt; is hex-encoded blob, &lt;xxxx&gt; 16-bit hex error code</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serial_port</strong> – Serial-port object to use, must be opened by the caller</p></li>
+<li><p><strong>encoding</strong> (<em>str</em>) – Encoding format to use</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.MC_STATUS_BAD_ARGUMENT_COUNT">
+<span class="sig-name descname"><span class="pre">MC_STATUS_BAD_ARGUMENT_COUNT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.MC_STATUS_BAD_ARGUMENT_COUNT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.MC_STATUS_BAD_ARGUMENT_VALUE">
+<span class="sig-name descname"><span class="pre">MC_STATUS_BAD_ARGUMENT_VALUE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.MC_STATUS_BAD_ARGUMENT_VALUE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.MC_STATUS_BAD_BLOB">
+<span class="sig-name descname"><span class="pre">MC_STATUS_BAD_BLOB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.MC_STATUS_BAD_BLOB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.MC_STATUS_BAD_COMMAND">
+<span class="sig-name descname"><span class="pre">MC_STATUS_BAD_COMMAND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.MC_STATUS_BAD_COMMAND" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.MC_STATUS_BUFFER_OVERRUN">
+<span class="sig-name descname"><span class="pre">MC_STATUS_BUFFER_OVERRUN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.MC_STATUS_BUFFER_OVERRUN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.MC_STATUS_OK">
+<span class="sig-name descname"><span class="pre">MC_STATUS_OK</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.MC_STATUS_OK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.STATUS_SOURCE_COMMAND_HANDLER">
+<span class="sig-name descname"><span class="pre">STATUS_SOURCE_COMMAND_HANDLER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.STATUS_SOURCE_COMMAND_HANDLER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.STATUS_SOURCE_CRYPTOAUTHLIB">
+<span class="sig-name descname"><span class="pre">STATUS_SOURCE_CRYPTOAUTHLIB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.STATUS_SOURCE_CRYPTOAUTHLIB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.STATUS_SOURCE_WINC">
+<span class="sig-name descname"><span class="pre">STATUS_SOURCE_WINC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.STATUS_SOURCE_WINC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.firmware_command">
+<span class="sig-name descname"><span class="pre">firmware_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">payload_blob</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.firmware_command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a command to the firmware and receive a response</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>command</strong> (<em>str</em>) – Command string to send to firmware</p></li>
+<li><p><strong>args</strong> (<em>list</em><em> of </em><em>str</em>) – Argument list</p></li>
+<li><p><strong>payload_blob</strong> (<em>str</em>) – Binary data to send (normally hex-encoded)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.parse_error_code">
+<span class="sig-name descname"><span class="pre">parse_error_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">errorline</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.parse_error_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a line containing error code
+The error code will be parsed and a more informative error message will be logged</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>errorline</strong> (<em>str</em>) – String from target containing error code</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>User friendly error message</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.read_response">
+<span class="sig-name descname"><span class="pre">read_response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.read_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read response from kit. Response can be multiple lines either
+terminated with “OKrn”, “ERRORrn”, or ‘&gt;’ so a simple read_until
+won’t do.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Response lines (blank lines and CR-LF stripped)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.synchronize">
+<span class="sig-name descname"><span class="pre">synchronize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.synchronize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Synchronize with firmware CLI using the ping command and unique sequence number</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.wait_for_reset">
+<span class="sig-name descname"><span class="pre">wait_for_reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.firmwareinterface.ProvisioningFirmwareDriver.wait_for_reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait for ‘READY’ prompt to be received after restart of application,
+indicating firmware is ready to accept commands.
+This method will time out without raising if READY is not received,
+meaning target was not reset prior to this command,
+:return: Welcome banner + “READY” if it was reset, else empty string or garbage.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pykitcommander.programmer">
+<span id="programmer"></span><h2>Programmer<a class="headerlink" href="#module-pykitcommander.programmer" title="Permalink to this heading">¶</a></h2>
+<p>Programming related functions, using pymcuprog backend API.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pykitcommander.programmer.Programmer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykitcommander.programmer.</span></span><span class="sig-name descname"><span class="pre">Programmer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serialnumber</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.programmer.Programmer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to program applications</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>serialnumber</strong> (<em>str</em>) – Serial number of programmer</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.programmer.Programmer.erase_target_device">
+<span class="sig-name descname"><span class="pre">erase_target_device</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.programmer.Programmer.erase_target_device" title="Permalink to this definition">¶</a></dt>
+<dd><p>Erases target device
+Useful to clean up after provisioning etc when no application is available.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.programmer.Programmer.program_data">
+<span class="sig-name descname"><span class="pre">program_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">MemoryNames.FLASH</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">erase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.programmer.Programmer.program_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Program target with memory data, assumed to be a byte array. Returns: True if OK</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>bytearray</em>) – Raw data bytes to program</p></li>
+<li><p><strong>memory</strong> (<em>str</em>) – Memory type to program</p></li>
+<li><p><strong>offset</strong> (<em>int</em>) – First address to program</p></li>
+<li><p><strong>erase</strong> (<em>boolean</em>) – True to erase before programming</p></li>
+<li><p><strong>verify</strong> (<em>boolean</em>) – True to verify after programming</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if programming succeeded</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.programmer.Programmer.program_hexfile">
+<span class="sig-name descname"><span class="pre">program_hexfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">MemoryNames.FLASH</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">erase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.programmer.Programmer.program_hexfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Program target with hex file. Returns: True if OK</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> – Full path to file to program</p></li>
+<li><p><strong>memory</strong> (<em>str</em>) – Memory type to program</p></li>
+<li><p><strong>erase</strong> (<em>boolean</em>) – True to erase before programming</p></li>
+<li><p><strong>verify</strong> (<em>boolean</em>) – True to verify after programming</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if programming succeeded</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.programmer.Programmer.read_data">
+<span class="sig-name descname"><span class="pre">read_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">MemoryNames.FLASH</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.programmer.Programmer.read_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read data from device memory. This function only supports reading a
+single memory, and returns a single bytearray. size=0 means read
+the whole memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>memory</strong> (<em>str</em>) – Memory type to read</p></li>
+<li><p><strong>offset</strong> (<em>int</em>) – First address to read</p></li>
+<li><p><strong>size</strong> (<em>int</em>) – Number of bytes to read</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.programmer.Programmer.reboot">
+<span class="sig-name descname"><span class="pre">reboot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.programmer.Programmer.reboot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reboot debugger. Note that for IOT kits, this only reboots the debugger, not the target.
+Purpose is to invalidate the cache after the click-me file has been updated.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.programmer.Programmer.reset_target">
+<span class="sig-name descname"><span class="pre">reset_target</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.programmer.Programmer.reset_target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets the target device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>delay</strong> (<em>float</em><em>, </em><em>optional</em><em>, </em><em>defaults to 0.5s</em>) – Number of seconds to delay after reset</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pykitcommander.programmer.PymcuprogProgrammer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykitcommander.programmer.</span></span><span class="sig-name descname"><span class="pre">PymcuprogProgrammer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serialnumber</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dfp_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.programmer.PymcuprogProgrammer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pykitcommander.programmer.Programmer" title="pykitcommander.programmer.Programmer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Programmer</span></code></a></p>
+<p>Class to interface pymcuprog backend.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serialnumber</strong> (<em>str</em>) – Serial number of programmer</p></li>
+<li><p><strong>dfp_path</strong> (<em>str</em>) – Path to device family pack (for PIC programming only)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.programmer.PymcuprogProgrammer.erase_target_device">
+<span class="sig-name descname"><span class="pre">erase_target_device</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.programmer.PymcuprogProgrammer.erase_target_device" title="Permalink to this definition">¶</a></dt>
+<dd><p>Erases target device
+Useful to clean up after provisioning etc when no application is available.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.programmer.PymcuprogProgrammer.get_usable_kits">
+<span class="sig-name descname"><span class="pre">get_usable_kits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.programmer.PymcuprogProgrammer.get_usable_kits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of usable kits. Programming methods below will only
+work if there is exactly one usable kit in the list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Usable kits connected</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.programmer.PymcuprogProgrammer.program_data">
+<span class="sig-name descname"><span class="pre">program_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">MemoryNames.FLASH</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">erase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.programmer.PymcuprogProgrammer.program_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Program target with memory data, assumed to be a byte array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>bytearray</em>) – Raw data bytes to program</p></li>
+<li><p><strong>memory</strong> (<em>str</em>) – Memory type to program</p></li>
+<li><p><strong>offset</strong> (<em>int</em>) – First address to program</p></li>
+<li><p><strong>erase</strong> (<em>boolean</em>) – True to erase before programming</p></li>
+<li><p><strong>verify</strong> (<em>boolean</em>) – True to verify after programming</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if programming succeeded</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.programmer.PymcuprogProgrammer.program_hexfile">
+<span class="sig-name descname"><span class="pre">program_hexfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">MemoryNames.FLASH</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">erase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.programmer.PymcuprogProgrammer.program_hexfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Program target with hex file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> – Full path to file to program</p></li>
+<li><p><strong>memory</strong> (<em>str</em>) – Memory type to program</p></li>
+<li><p><strong>erase</strong> (<em>boolean</em>) – True to erase before programming</p></li>
+<li><p><strong>verify</strong> (<em>boolean</em>) – True to verify after programming</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if programming succeeded</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.programmer.PymcuprogProgrammer.read_data">
+<span class="sig-name descname"><span class="pre">read_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">MemoryNames.FLASH</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.programmer.PymcuprogProgrammer.read_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read data from device memory. This function only supports reading a
+single memory, and returns a single bytearray. size=0 means read
+the whole memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>memory</strong> (<em>str</em>) – Memory type to read</p></li>
+<li><p><strong>offset</strong> (<em>int</em>) – First address to read</p></li>
+<li><p><strong>size</strong> (<em>int</em>) – Number of bytes to read</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.programmer.PymcuprogProgrammer.read_kit_info">
+<span class="sig-name descname"><span class="pre">read_kit_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">register</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.programmer.PymcuprogProgrammer.read_kit_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads a single kit info register (that is not in the CMSIS-DAP info struct from config)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>register</strong> (<em>str</em>) – Name of register to read</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.programmer.PymcuprogProgrammer.reboot">
+<span class="sig-name descname"><span class="pre">reboot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.programmer.PymcuprogProgrammer.reboot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reboot debugger. Note that for IOT kits, this only reboots the debugger, not the target.
+Purpose is to invalidate the cache after the click-me file has been updated.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pykitcommander.programmer.PymcuprogProgrammer.reset_target">
+<span class="sig-name descname"><span class="pre">reset_target</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.programmer.PymcuprogProgrammer.reset_target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets the target device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>delay</strong> (<em>float</em><em>, </em><em>optional</em><em>, </em><em>defaults to 0.5s</em>) – Number of seconds to delay after reset</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pykitcommander.kitcommandererrors">
+<span id="errors"></span><h2>Errors<a class="headerlink" href="#module-pykitcommander.kitcommandererrors" title="Permalink to this heading">¶</a></h2>
+<p>Exceptions/Errors that pykitcommander can raise</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="pykitcommander.kitcommandererrors.KitCommunicationError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykitcommander.kitcommandererrors.</span></span><span class="sig-name descname"><span class="pre">KitCommunicationError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.kitcommandererrors.KitCommunicationError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pykitcommander.kitcommandererrors.PykitcommanderError" title="pykitcommander.kitcommandererrors.PykitcommanderError"><code class="xref py py-class docutils literal notranslate"><span class="pre">PykitcommanderError</span></code></a></p>
+<p>Error when sending command or receiving response</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>msg</strong> (<em>str</em>) – Error message</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pykitcommander.kitcommandererrors.KitConnectionError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykitcommander.kitcommandererrors.</span></span><span class="sig-name descname"><span class="pre">KitConnectionError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.kitcommandererrors.KitConnectionError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pykitcommander.kitcommandererrors.PykitcommanderError" title="pykitcommander.kitcommandererrors.PykitcommanderError"><code class="xref py py-class docutils literal notranslate"><span class="pre">PykitcommanderError</span></code></a></p>
+<p>Kit connection failure</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>error dependent</em>) – Additional information (payload)</p></li>
+<li><p><strong>msg</strong> (<em>str</em>) – Error message</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pykitcommander.kitcommandererrors.KitError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykitcommander.kitcommandererrors.</span></span><span class="sig-name descname"><span class="pre">KitError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.kitcommandererrors.KitError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pykitcommander.kitcommandererrors.PykitcommanderError" title="pykitcommander.kitcommandererrors.PykitcommanderError"><code class="xref py py-class docutils literal notranslate"><span class="pre">PykitcommanderError</span></code></a></p>
+<p>Kit failure</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>msg</strong> (<em>str</em>) – Error message</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pykitcommander.kitcommandererrors.PortError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykitcommander.kitcommandererrors.</span></span><span class="sig-name descname"><span class="pre">PortError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.kitcommandererrors.PortError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pykitcommander.kitcommandererrors.PykitcommanderError" title="pykitcommander.kitcommandererrors.PykitcommanderError"><code class="xref py py-class docutils literal notranslate"><span class="pre">PykitcommanderError</span></code></a></p>
+<p>Port connection failure</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>msg</strong> (<em>str</em>) – Error message</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pykitcommander.kitcommandererrors.ProgrammingError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykitcommander.kitcommandererrors.</span></span><span class="sig-name descname"><span class="pre">ProgrammingError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.kitcommandererrors.ProgrammingError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pykitcommander.kitcommandererrors.PykitcommanderError" title="pykitcommander.kitcommandererrors.PykitcommanderError"><code class="xref py py-class docutils literal notranslate"><span class="pre">PykitcommanderError</span></code></a></p>
+<p>Unable to program the requested application</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>msg</strong> (<em>str</em>) – Error message</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pykitcommander.kitcommandererrors.PykitcommanderError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pykitcommander.kitcommandererrors.</span></span><span class="sig-name descname"><span class="pre">PykitcommanderError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pykitcommander.kitcommandererrors.PykitcommanderError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Base class for all Pykitcommander specific exceptions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>msg</strong> (<em>str</em>) – Error message</p></li>
+<li><p><strong>code</strong> (<em>int</em>) – Error code</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pykitcommander">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pykitcommander" title="Permalink to this heading">¶</a></h2>
+<section id="pykitcommander-python-kit-commander">
+<h3>pykitcommander - Python Kit Commander<a class="headerlink" href="#pykitcommander-python-kit-commander" title="Permalink to this heading">¶</a></h3>
+<p>pykitcommander manages interaction with Microchip development kits based on
+PKOB nano on-board debugger</p>
+<p>In many situations interaction with peripheral hardware components on a
+development kit is done via a “bridge” application running on the MCU on that
+kit.  To achieve this, the bridge firmware must be programmed onto that MCU,
+and then communications over a given channel and protocol can logically link
+the host computer to the peripheral components.</p>
+<p>pykitcommander manages some aspects of this interaction by:</p>
+<ul class="simple">
+<li><p>Containing a registry of application hex files for various applications on various kits</p></li>
+<li><p>Programming the application onto the kit</p></li>
+<li><p>Providing a most-probable serial-port connection string for that kit</p></li>
+<li><p>Providing an indication of what protocol format is in use on the application</p></li>
+<li><p>Supporting common protocol framing formats being used</p></li>
+</ul>
+<dl class="simple">
+<dt>Supported kits are:</dt><dd><ul class="simple">
+<li><p>AVR-IoT WG and WA</p></li>
+<li><p>PIC-IoT WG and WA</p></li>
+<li><p>AVR-IoT Cellular Mini</p></li>
+<li><p>SAM-IoT WG</p></li>
+<li><p>CryptoAuth Trust Platform Development Kit</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>pykitcommander is available:</dt><dd><ul class="simple">
+<li><p>install using pip from pypi: <a class="reference external" href="https://pypi.org/project/pykitcommander">https://pypi.org/project/pykitcommander</a></p></li>
+<li><p>browse source code on github: <a class="reference external" href="https://github.com/microchip-pic-avr-tools/pykitcommander">https://github.com/microchip-pic-avr-tools/pykitcommander</a></p></li>
+<li><p>read API documentation on github: <a class="reference external" href="https://microchip-pic-avr-tools.github.io/pykitcommander">https://microchip-pic-avr-tools.github.io/pykitcommander</a></p></li>
+<li><p>read the changelog on github: <a class="reference external" href="https://github.com/microchip-pic-avr-tools/pykitcommander/blob/main/CHANGELOG.md">https://github.com/microchip-pic-avr-tools/pykitcommander/blob/main/CHANGELOG.md</a></p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="usage-example">
+<h3>Usage example<a class="headerlink" href="#usage-example" title="Permalink to this heading">¶</a></h3>
+<p>Usage in AVR-IoT and PIC-IoT kits:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pykitcommander.kitprotocols</span> <span class="kn">import</span> <span class="n">setup_kit</span>
+
+<span class="c1"># Request iotprovision protocol to be set up on a connected kit</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">setup_kit</span><span class="p">(</span><span class="s2">&quot;iotprovision&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create a serial connection to communicate with the firmware</span>
+<span class="c1"># Note: SerialCDC class wraps pyserial Serial class</span>
+<span class="kn">from</span> <span class="nn">pyedbglib.serialport.serialcdc</span> <span class="kn">import</span> <span class="n">SerialCDC</span>
+<span class="k">with</span> <span class="n">SerialCDC</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;port&#39;</span><span class="p">],</span> <span class="n">info</span><span class="p">[</span><span class="s1">&#39;protocol_baud&#39;</span><span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">stopbits</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="k">as</span> <span class="n">serial_connection</span><span class="p">:</span>
+    <span class="c1"># The firmware driver wraps this serial connection which enables a simple command-response transaction</span>
+    <span class="c1"># This is defined in pykitcommander</span>
+    <span class="kn">from</span> <span class="nn">pykitcommander.firmwareinterface</span> <span class="kn">import</span> <span class="n">ProvisioningFirmwareDriver</span>
+    <span class="n">firmware_driver</span> <span class="o">=</span> <span class="n">ProvisioningFirmwareDriver</span><span class="p">(</span><span class="n">serial_connection</span><span class="p">)</span>
+
+    <span class="c1"># Send firmware command to turn LED on</span>
+    <span class="n">firmware_driver</span><span class="o">.</span><span class="n">firmware_command</span><span class="p">(</span><span class="s2">&quot;MC+SETLED&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;conn&quot;</span><span class="p">,</span><span class="s2">&quot;on&quot;</span><span class="p">])</span>
+
+    <span class="c1"># Send firmware command to read the ECC serial number</span>
+    <span class="n">ecc_serial_number</span> <span class="o">=</span> <span class="n">firmware_driver</span><span class="o">.</span><span class="n">firmware_command</span><span class="p">(</span><span class="s2">&quot;MC+ECC+SERIAL&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ECC serial number read out: &#39;</span><span class="si">{}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ecc_serial_number</span><span class="p">))</span>
+
+    <span class="c1"># Send firmware command to turn LED off</span>
+    <span class="n">firmware_driver</span><span class="o">.</span><span class="n">firmware_command</span><span class="p">(</span><span class="s2">&quot;MC+SETLED&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;conn&quot;</span><span class="p">,</span><span class="s2">&quot;off&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="notes-for-linux-systems">
+<h3>Notes for Linux® systems<a class="headerlink" href="#notes-for-linux-systems" title="Permalink to this heading">¶</a></h3>
+<p>This package uses pyedbglib and other libraries for USB transport and some udev rules are required.
+For details see the pyedbglib package: <a class="reference external" href="https://pypi.org/project/pyedbglib">https://pypi.org/project/pyedbglib</a></p>
+</section>
+</section>
+</section>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-wrapper">
+        <div class="footer" role="contentinfo">
+            © Copyright 2021, Microchip Technology Inc
+        </div>
+    </div>
+  </body>
+</html>
