@@ -11,7 +11,6 @@ pykitcommander is available:
 * install using pip from pypi: https://pypi.org/project/pykitcommander
 * browse source code on github: https://github.com/microchip-pic-avr-tools/pykitcommander
 * read API documentation on github: https://microchip-pic-avr-tools.github.io/pykitcommander
-* read the changelog on github: https://github.com/microchip-pic-avr-tools/pykitcommander/blob/main/CHANGELOG.md
 
 ## Background
 In many situations interaction with peripheral hardware components on a development kit is done via a "bridge" application running on the MCU on that kit.  To achieve this, the bridge firmware must be programmed onto that MCU, and then communications over a given channel and protocol can logically link the host computer to the peripheral components.
@@ -34,6 +33,7 @@ Supported kits are:
 - PIC-IoT WG and WA
 - AVR-IoT Cellular Mini
 - SAM-IoT WG
+- SAM-IoT Wx V2
 - CryptoAuth Trust Platform Development Kit
 
 ## Simple example

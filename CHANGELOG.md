@@ -1,5 +1,16 @@
 # Changelog
 
+# [2.8] - December 2023
+
+### Changed
+- DSG-6666 Updated AVR-IoT provisioning firmware, AVR-IoT Cellular Mini provisioning firmware, AVR-IoT Cellular Mini AWS demo and PIC-IoT Azure demo.
+
+### Added
+- DSG-5883 Added support for SAM-IoT Wx
+
+### Fixed
+- DSG-6133 PEP-0440 compliance for pykitcommander
+
 # [2.7] - October 2022
 
 ### Changed

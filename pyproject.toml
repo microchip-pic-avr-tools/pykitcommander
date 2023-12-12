@@ -1,0 +1,64 @@
+[build-system]
+# project table in pyproject.toml was added in setuptools 61.0.0
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pykitcommander"
+authors = [
+    {name = "Microchip Technology", email = "support@microchip.com"}
+]
+description = "Collection of tools for cloud provisioning of Microchip IoT kits"
+license = {text = "MIT"}
+keywords = ['Microchip', 'AVR', 'PIC', 'AVR-IoT', 'PIC-IoT']
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Embedded Systems",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "License :: OSI Approved :: MIT License"
+]
+
+dependencies = [
+    # External packages
+    "pyserial",
+    "hexdump",
+
+    # Microchip packages
+    "pyedbglib>=2.22",
+    "pymcuprog>=3.3",
+    "pydebuggerconfig>=3.5"
+]
+
+dynamic = ["readme", "version"]
+
+[tool.setuptools.dynamic]
+readme = {file = ["pypi.md", "CHANGELOG.md"], content-type = "text/markdown"}
+version = {attr = "pykitcommander.__version__"}
+
+[project.urls]
+"Homepage" = "https://github.com/microchip-pic-avr-tools/pykitcommander"
+
+[project.optional-dependencies]
+dev = ["pylint>=2.15"]
+test = ["mock", "pytest"]
+doc = [
+    # To avoid missing modules when generating documentation the mock module used by the tests is needed.
+    # The mock module could also be useful if some imports need to be mocked out when generating documentation.
+    "mock",
+    "sphinx"
+]
+
+[tool.setuptools.packages.find]
+exclude = ["pykitcommander.tests*", "doc*", "fw*"]
+
+[tool.setuptools.package-data]
+pykitcommander = ["fw/**/*.hex", "picpack/**/*.py", "picpack/**/logging.json"]

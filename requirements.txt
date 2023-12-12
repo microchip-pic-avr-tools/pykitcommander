@@ -1,8 +1,0 @@
-# External packages
-pyserial
-hexdump
-
-# Microchip packages
-pyedbglib>=2.22.*
-pymcuprog>=3.3
-pydebuggerconfig>=3.5

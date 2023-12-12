@@ -30,6 +30,7 @@ Supported kits are:
 - PIC-IoT WG and WA
 - AVR-IoT Cellular Mini
 - SAM-IoT WG
+- SAM-IoT Wx V2
 - CryptoAuth Trust Platform Development Kit
 
 For usage examples see pypi.md.

@@ -69,7 +69,7 @@ AVRIOT_PROVISION_FW = {
     'description' : "Provisioning firmware for AVR-IoT",
     'bundled_firmware' : "fw/avr/atmega4808-iot-provision-v2.hex",
     # Version fetched by command MC+VERSION=FIRMWARE
-    'bundled_firmware_version': "0.4.8",
+    'bundled_firmware_version': "0.4.9",
     'internal_firmware_repo' : None,
     'public_firmware_repo' : None,
     'protocol_baud' : 115200,
@@ -95,7 +95,7 @@ AVRIOT_CELLULARMINI_PROVISION_FW = {
     'description' : "Provisioning firmware for AVR-IoT Cellular Mini",
     'bundled_firmware' : "fw/avr/avr128db48-iot-cellular-mini-provisioning.hex",
     # Version fetched by command MC+VERSION=FIRMWARE
-    'bundled_firmware_version': "1.1.7",
+    'bundled_firmware_version': "1.1.8",
     'internal_firmware_repo' : None,
     'public_firmware_repo' : None,
     'protocol_baud' : 115200,
@@ -107,7 +107,7 @@ AVRIOT_CELLULARMINI_PROVISION_FW = {
 AVRIOT_CELLULARMINI_AWS_DEMO_FW = {
     'description' : "Arduino-based demo application for AWS connectivity using AVR-IoT Cellular Mini",
     'bundled_firmware' : "fw/avr/avr128db48-iot-cellular-mini-arduino-demo.hex",
-    'bundled_firmware_version': "1.3.2",
+    'bundled_firmware_version': "1.3.9",
     'internal_firmware_repo' : None,
     'public_firmware_repo' : "https://api.github.com/repos/microchip-pic-avr-solutions/avr-iot-cellular-arduino-library/releases/latest/",
     'protocol_baud' : None,
@@ -120,7 +120,7 @@ PICIOT_PROVISION_FW = {
     'description' : "Provisioning firmware for PIC-IoT",
     'bundled_firmware' : "fw/pic/pic24fj128ga705-iot-provision-v2.hex",
     # Version fetched by command MC+VERSION=FIRMWARE
-    'bundled_firmware_version': "0.4.6",
+    'bundled_firmware_version': "0.4.7",
     'internal_firmware_repo' : None,
     'public_firmware_repo' : None,
     'protocol_baud' : 115200,
@@ -134,6 +134,19 @@ SAMIOT_PROVISION_FW = {
     'bundled_firmware' : "fw/sam/samd21g18a-iot-provision.hex",
     # Version fetched by command MC+VERSION=FIRMWARE
     'bundled_firmware_version': "1.0.1",
+    'internal_firmware_repo' : None,
+    'public_firmware_repo' : None,
+    'protocol_baud' : 115200,
+    'protocol_id' : 'ProvisioningV2',
+    'protocol_class' : ProvisioningFirmwareDriver,
+    "startup_delay": 0,
+}
+
+SAMIOT_WX_PROVISION_FW = {
+    'description' : "Provisioning firmware for SAM-IoT Wx",
+    'bundled_firmware' : "fw/sam/samd21g18a-iot-wx-provision.hex",
+    # Version fetched by command MC+VERSION=FIRMWARE
+    'bundled_firmware_version': "1.0.0",
     'internal_firmware_repo' : None,
     'public_firmware_repo' : None,
     'protocol_baud' : 115200,
@@ -206,7 +219,10 @@ PICIOT_GOOGLE_DEMO_FW = {
 PICIOT_AZURE_DEMO_FW = {
     'description' : "Demo application for Azure connectivity using PIC-IoT",
     # Source: https://github.com/Azure-Samples/Microchip-PIC-IoT-Wx/blob/main/AzureIotPnpDps.X/dist/default/production/AzureIotPnpDps.X.production.hex
-    # Exported 2021.11.19
+    # Exported 2023.11.30
+    # Version number seems to be the same as the previous release but this hex file came from this github commit:
+    # https://github.com/Azure-Samples/Microchip-PIC-IoT-Wx/commit/c3a034b74d9ff9d4f3bee6b89416ae2c99f3e5f4
+    # Published on github 2022.05.12
     'bundled_firmware' : "fw/pic/AzureIotPnpDps.X.production.hex",
     'bundled_firmware_version': "1.1.1",
     'internal_firmware_repo' : None,
@@ -284,6 +300,18 @@ SAMIOT_WINCUPGRADE_FW = {
     "startup_delay": 0.1,
 }
 
+SAMIOT_WX_WINCUPGRADE_FW = {
+    'description' : "WINC upgrade bridge firmware for SAM-IoT",
+    'bundled_firmware' : "fw/sam/samd21g18a-iot-wx-winc-upgrade.hex",
+    'bundled_firmware_version': "unknown",
+    'internal_firmware_repo' : None,
+    'public_firmware_repo' : None,
+    'protocol_baud' : 115200,
+    'protocol_id' : 'WincUpgradeV1',
+    'protocol_class' : None,
+    "startup_delay": 0.1,
+}
+
 AVRIOT_FW_FUNCTIONS = {
     'iotprovision' : AVRIOT_PROVISION_FW,
     'iotprovision-aws' : AVRIOT_PROVISION_FW,
@@ -344,6 +372,18 @@ SAMIOT_FW_FUNCTIONS = {
     'demo-azure' : SAMIOT_AZURE_DEMO_FW,
 }
 
+SAMIOT_WX_FW_FUNCTIONS = {
+    'iotprovision' : SAMIOT_WX_PROVISION_FW,
+    'iotprovision-aws' : SAMIOT_WX_PROVISION_FW,
+    'iotprovision-google' : SAMIOT_WX_PROVISION_FW,
+    'iotprovision-azure' : SAMIOT_WX_PROVISION_FW,
+    'eccprovision' : SAMIOT_WX_PROVISION_FW,
+    'wincupgrade' : SAMIOT_WX_WINCUPGRADE_FW,
+    'demo-aws' : None,
+    'demo-google' : None,
+    'demo-azure' : None,
+}
+
 TRUSTPLATFORM_FW_FUNCTIONS = {
     'iotprovision' : None,
     'iotprovision-aws' : None,
@@ -400,6 +440,17 @@ AVR_IOT_CELLULARMINI_KIT = {
     'leds' : CellularMiniKitLeds()
 }
 
+SAM_IOT_WX_KIT = {
+    'kit_names' : ['samd21-iot wx'],
+    'firmware' : SAMIOT_WX_FW_FUNCTIONS,
+    'firmware_variants' : ['aws', 'google', 'azure'],
+    'architecture' : 'sam',
+    'device' : 'atsamd21g18a',
+    'programmer' : 'nedbg',
+    'programmer_stack' : 'pymcuprog',
+    'leds' : WifiKitLeds()
+}
+
 SAM_IOT_KIT = {
     'kit_names' : ['samd21-iot wg'],
     'firmware' : SAMIOT_FW_FUNCTIONS,
@@ -422,7 +473,7 @@ TRUSTPLATFORM_KIT = {
     'leds' : TrustplatformKitLeds()
 }
 
-SUPPORTED_KITS = [AVR_IOT_KIT, PIC_IOT_KIT, AVR_IOT_CELLULAR_KIT, AVR_IOT_CELLULARMINI_KIT, SAM_IOT_KIT, TRUSTPLATFORM_KIT]
+SUPPORTED_KITS = [AVR_IOT_KIT, PIC_IOT_KIT, AVR_IOT_CELLULAR_KIT, AVR_IOT_CELLULARMINI_KIT, SAM_IOT_KIT, SAM_IOT_WX_KIT, TRUSTPLATFORM_KIT]
 
 def get_supported_kits():
     """

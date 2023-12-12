@@ -19,7 +19,7 @@ needs_sphinx = "3.5"
 # -- Project information -----------------------------------------------------
 
 project = 'pykitcommander'
-copyright = '2021, Microchip Technology Inc'
+copyright = '2023, Microchip Technology Inc'
 author = 'Microchip Technology Inc'
 
 
